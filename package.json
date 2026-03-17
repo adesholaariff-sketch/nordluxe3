@@ -1,0 +1,47 @@
+{
+  "name": "nordluxe-website",
+  "version": "1.0.0",
+  "description": "NORDLUXE - Scandinavian Luxury Fashion Website",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "bash deploy.sh",
+    "security-audit": "bash security-audit.sh",
+    "audit": "npm audit",
+    "audit-fix": "npm audit fix",
+    "lint": "echo 'Add your preferred linter here'",
+    "test": "echo 'Add your tests here'"
+  },
+  "keywords": [
+    "fashion",
+    "luxury",
+    "scandinavian",
+    "nordic",
+    "ecommerce"
+  ],
+  "author": "NORDLUXE",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/nordluxe-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/nordluxe-website/issues"
+  },
+  "homepage": "https://nordluxe.com",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "dotenv": "^16.0.0"
+  },
+  "optionalDependencies": {
+    "helmet": "^6.0.0",
+    "express-rate-limit": "^6.0.0",
+    "cors": "^2.8.5",
+    "winston": "^3.8.0"
+  }
+}

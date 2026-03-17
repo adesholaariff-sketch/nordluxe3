@@ -1,0 +1,776 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NORDLUXE | Scandinavian Luxury</title>
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat', sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+color:#e0e0e0;
+min-height:100vh;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 60px;
+background:linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(26,26,46,0.95) 100%);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(209,155,72,0.3);
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 0 30px rgba(209,155,72,0.1);
+}
+
+.logo img{
+height:45px;
+transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+filter:drop-shadow(0 0 10px rgba(209,155,72,0.5));
+}
+
+.logo img:hover{
+transform:scale(1.05);
+filter:drop-shadow(0 0 20px rgba(209,155,72,0.8));
+}
+
+nav a{
+color:#e0e0e0;
+text-decoration:none;
+margin-left:30px;
+font-size:15px;
+letter-spacing:1px;
+font-weight:500;
+transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+position:relative;
+}
+
+nav a::before{
+content:'';
+position:absolute;
+bottom:-5px;
+left:0;
+width:0;
+height:2px;
+background:linear-gradient(90deg, #d19b48, #ffd700);
+transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav a:hover{
+color:#ffd700;
+transform:translateY(-2px);
+}
+
+nav a:hover::before{
+width:100%;
+}
+
+.cart-btn{
+background:linear-gradient(135deg, #d19b48 0%, #ffd700 100%) !important;
+color:#000 !important;
+padding:10px 20px !important;
+border-radius:25px !important;
+font-weight:600 !important;
+font-size:14px !important;
+letter-spacing:0.5px !important;
+transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+box-shadow:0 4px 15px rgba(209,155,72,0.3) !important;
+border:1px solid rgba(255,215,0,0.2) !important;
+}
+
+.cart-btn:hover{
+background:linear-gradient(135deg, #ffd700 0%, #d19b48 100%) !important;
+transform:scale(1.05) translateY(-2px) !important;
+box-shadow:0 8px 25px rgba(209,155,72,0.5) !important;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+position:relative;
+overflow:hidden;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+padding:0 20px;
+max-width:960px;
+}
+.hero-subtitle{
+font-size:20px;
+letter-spacing:2px;
+color:rgba(255,215,0,0.9);
+margin-top:10px;
+margin-bottom:18px;
+text-shadow:0 0 20px rgba(255,215,0,0.4);
+opacity:0.9;
+animation:fadeInUp 1.5s ease-out 0.2s both;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:radial-gradient(circle at 30% 40%, rgba(209,155,72,0.1) 0%, transparent 50%),
+radial-gradient(circle at 70% 60%, rgba(255,215,0,0.05) 0%, transparent 50%);
+animation:pulse 8s ease-in-out infinite;
+}
+
+.hero h1{
+font-size:72px;
+letter-spacing:4px;
+color:#fff;
+margin-bottom:20px;
+font-weight:800;
+text-shadow:0 0 30px rgba(209,155,72,0.5);
+animation:fadeInUp 1.5s ease-out;
+}
+
+.hero p{
+max-width:700px;
+line-height:1.8;
+opacity:.9;
+font-size:18px;
+font-weight:300;
+color:#e0e0e0;
+animation:fadeInUp 1.5s ease-out 0.3s both;
+}
+
+.hero button{
+margin-top:40px;
+padding:18px 40px;
+background:linear-gradient(135deg, #d19b48 0%, #ffd700 100%);
+border:none;
+color:#000;
+font-weight:600;
+font-size:16px;
+cursor:pointer;
+border-radius:30px;
+transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+box-shadow:0 8px 25px rgba(209,155,72,0.4);
+position:relative;
+overflow:hidden;
+}
+
+.hero button::before{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+transition:all 0.5s;
+}
+
+.hero button:hover{
+transform:scale(1.05) translateY(-3px);
+box-shadow:0 12px 35px rgba(209,155,72,0.6);
+}
+
+.hero button:hover::before{
+left:100%;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+text-align:center;
+font-size:36px;
+margin:100px 0 60px 0;
+letter-spacing:2px;
+color:#fff;
+font-weight:700;
+text-shadow:0 0 20px rgba(209,155,72,0.3);
+position:relative;
+}
+
+.section-title::after{
+content:'';
+position:absolute;
+bottom:-10px;
+left:50%;
+transform:translateX(-50%);
+width:80px;
+height:3px;
+background:linear-gradient(90deg, #d19b48, #ffd700);
+border-radius:2px;
+}
+
+/* PRODUCTS */
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:40px;
+padding:0 60px 100px;
+}
+
+.product{
+background:linear-gradient(135deg, rgba(26,26,46,0.9) 0%, rgba(22,33,62,0.9) 100%);
+border-radius:20px;
+overflow:hidden;
+transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+border:1px solid rgba(209,155,72,0.2);
+box-shadow:0 8px 25px rgba(0,0,0,0.3);
+position:relative;
+}
+
+.product::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:linear-gradient(135deg, rgba(209,155,72,0.05) 0%, transparent 50%);
+opacity:0;
+transition:all 0.3s ease;
+}
+
+.product:hover{
+transform:translateY(-15px) scale(1.02);
+box-shadow:0 20px 40px rgba(209,155,72,0.2);
+border-color:rgba(209,155,72,0.5);
+}
+
+.product:hover::before{
+opacity:1;
+}
+
+.product img{
+width:100%;
+height:340px;
+object-fit:cover;
+transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product:hover img{
+transform:scale(1.05);
+}
+
+.product-info{
+padding:25px;
+}
+
+.product-info h3{
+margin-bottom:15px;
+color:#fff;
+font-weight:600;
+font-size:20px;
+}
+
+.price{
+color:#ffd700;
+margin-bottom:20px;
+font-size:18px;
+font-weight:700;
+text-shadow:0 0 10px rgba(255,215,0,0.5);
+}
+
+.product button{
+width:100%;
+padding:15px;
+background:linear-gradient(135deg, #d19b48 0%, #ffd700 100%);
+border:1px solid rgba(255,215,0,0.2);
+color:#000;
+cursor:pointer;
+font-weight:600;
+font-size:15px;
+transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+border-radius:25px;
+position:relative;
+overflow:hidden;
+}
+
+.product button::before{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+transition:all 0.5s;
+}
+
+.product button:hover{
+background:linear-gradient(135deg, #ffd700 0%, #d19b48 100%);
+transform:translateY(-2px);
+box-shadow:0 8px 20px rgba(209,155,72,0.4);
+}
+
+.product button:hover::before{
+left:100%;
+}
+
+/* CART ANIMATION */
+
+@keyframes cartBounce {
+0% { transform: scale(1); }
+50% { transform: scale(1.1); }
+100% { transform: scale(1); }
+}
+
+.cart-animation {
+animation: cartBounce 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* FLYING CART ANIMATION */
+
+.flying-cart {
+position: fixed;
+width: 30px;
+height: 30px;
+background: linear-gradient(135deg, #d19b48 0%, #ffd700 100%);
+border-radius: 50%;
+z-index: 9999;
+pointer-events: none;
+animation: flyToCart 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+box-shadow: 0 4px 15px rgba(209,155,72, 0.6);
+}
+
+.flying-cart::before {
+content: '🛒';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-size: 16px;
+}
+
+@keyframes flyToCart {
+0% {
+transform: scale(1) rotate(0deg);
+opacity: 1;
+}
+20% {
+transform: scale(1.2) rotate(90deg);
+}
+60% {
+transform: scale(0.8) rotate(180deg);
+opacity: 0.8;
+}
+100% {
+transform: scale(0.3) rotate(360deg);
+opacity: 0;
+}
+}
+
+.cart-icon-bounce {
+animation: cartIconBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes cartIconBounce {
+0% { transform: scale(1); }
+25% { transform: scale(1.3) rotate(-10deg); }
+50% { transform: scale(1.1) rotate(10deg); }
+75% { transform: scale(1.2) rotate(-5deg); }
+100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+0%, 100% { opacity: 0.5; }
+50% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+0% {
+opacity: 0;
+transform: translateY(30px);
+}
+100% {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* ABOUT */
+
+.about{
+display:flex;
+flex-wrap:wrap;
+gap:60px;
+padding:100px 60px;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg, rgba(26,26,46,0.3) 0%, rgba(22,33,62,0.3) 100%);
+backdrop-filter:blur(10px);
+border-top:1px solid rgba(209,155,72,0.1);
+border-bottom:1px solid rgba(209,155,72,0.1);
+}
+
+.about img{
+width:300px;
+border-radius:50%;
+border:3px solid #d19b48;
+box-shadow:0 0 30px rgba(209,155,72,0.3);
+transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about img:hover{
+transform:scale(1.05);
+box-shadow:0 0 40px rgba(209,155,72,0.5);
+}
+
+.about-text{
+max-width:550px;
+line-height:1.8;
+color:#e0e0e0;
+}
+
+.about-text h2{
+font-size:36px;
+margin-bottom:30px;
+color:#fff;
+font-weight:700;
+text-shadow:0 0 20px rgba(209,155,72,0.3);
+}
+
+/* CONTACT */
+
+.contact{
+padding:100px 60px;
+text-align:center;
+background:linear-gradient(135deg, rgba(10,10,10,0.5) 0%, rgba(26,26,46,0.5) 100%);
+border-top:1px solid rgba(209,155,72,0.1);
+}
+
+.contact h2{
+font-size:36px;
+margin-bottom:60px;
+color:#fff;
+font-weight:700;
+text-shadow:0 0 20px rgba(209,155,72,0.3);
+}
+
+.contact p{
+margin-top:15px;
+opacity:.9;
+font-size:20px;
+color:#e0e0e0;
+font-weight:300;
+transition:all 0.3s ease;
+}
+
+.contact p:hover{
+color:#ffd700;
+transform:translateY(-2px);
+}
+
+/* STORY */
+
+.story{
+padding:100px 60px;
+text-align:center;
+max-width:900px;
+margin:0 auto;
+background:linear-gradient(135deg, rgba(22,33,62,0.3) 0%, rgba(26,26,46,0.3) 100%);
+border-top:1px solid rgba(209,155,72,0.1);
+border-bottom:1px solid rgba(209,155,72,0.1);
+}
+
+.story h2{
+font-size:36px;
+margin-bottom:60px;
+color:#fff;
+font-weight:700;
+text-shadow:0 0 20px rgba(209,155,72,0.3);
+}
+
+.story p{
+margin-bottom:35px;
+line-height:1.8;
+opacity:.9;
+font-size:18px;
+color:#e0e0e0;
+font-weight:300;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:50px;
+background:linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(26,26,46,0.95) 100%);
+border-top:1px solid rgba(209,155,72,0.3);
+position:relative;
+}
+
+footer p{
+margin-bottom:15px;
+color:#e0e0e0;
+font-weight:300;
+}
+
+footer a{
+color:#d19b48;
+text-decoration:none;
+font-weight:500;
+transition:all 0.3s ease;
+}
+
+footer a:hover{
+color:#ffd700;
+transform:translateY(-2px);
+}
+
+footer a{
+color:#d19b48;
+text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav>
+
+<div class="logo">
+<a href="ni.html"><img src="sa.jpg" alt="Nordluxe Logo"></a>
+</div>
+
+<div>
+<a href="ni.html">Home</a>
+<a href="collections.html">Collection</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="story.html">Story</a>
+<a href="cart.html" class="cart-btn">🛒 Cart</a>
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-content" data-aos="fade-up">
+<h1 data-aos="fade-up" data-aos-delay="200">NORDLUXE</h1>
+<h2 class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">Scandinavian Luxury — Nordic Heritage. Future Wears.</h2>
+<p data-aos="fade-up" data-aos-delay="600">
+Luxury Scandinavian fashion crafted with minimalist elegance and premium materials.
+</p>
+
+<button onclick="scrollToCollection()" data-aos="fade-up" data-aos-delay="800">Explore Collection</button>
+</div>
+
+</section>
+
+<!-- COLLECTION -->
+
+<h2 class="section-title" id="collection" data-aos="fade-up">NORDLUXE Collection</h2>
+
+<div class="product-grid">
+
+<div class="product" data-aos="fade-up" data-aos-delay="100">
+<img src="ChatGPT%20Image%20Feb%201%2C%202026%2C%2003_15_39%20PM.png">
+<div class="product-info">
+<h3>Nordic Parka</h3>
+<div class="price">$890</div>
+<button onclick="addCart('Nordic Parka', this, '$890')">Add to Cart</button>
+</div>
+</div>
+
+<div class="product" data-aos="fade-up" data-aos-delay="200">
+<img src="https://images.unsplash.com/photo-1542060748-10c28b62716f">
+<div class="product-info">
+<h3>Heritage Sweater</h3>
+<div class="price">$450</div>
+<button onclick="addCart('Heritage Sweater', this, '$450')">Add to Cart</button>
+</div>
+</div>
+
+<div class="product" data-aos="fade-up" data-aos-delay="300">
+<img src="https://images.unsplash.com/photo-1516826957135-700dedea698c">
+<div class="product-info">
+<h3>Arctic Boots</h3>
+<div class="price">$620</div>
+<button onclick="addCart('Arctic Boots', this, '$620')">Add to Cart</button>
+</div>
+</div>
+
+<div class="product" data-aos="fade-up" data-aos-delay="400">
+<img src="https://images.unsplash.com/photo-1588854337221-4cf9fa96059c">
+<div class="product-info">
+<h3>Wool Scarf</h3>
+<div class="price">$180</div>
+<button onclick="addCart('Wool Scarf', this, '$180')">Add to Cart</button>
+</div>
+</div>
+
+<div class="product" data-aos="fade-up" data-aos-delay="500">
+<img src="https://images.unsplash.com/photo-1548883354-94bcfe321cbb">
+<div class="product-info">
+<h3>Minimalist Coat</h3>
+<div class="price">$980</div>
+<button onclick="addCart('Minimalist Coat', this, '$980')">Add to Cart</button>
+</div>
+</div>
+
+<div class="product" data-aos="fade-up" data-aos-delay="600">
+<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
+<div class="product-info">
+<h3>Nordluxe Hoodie</h3>
+<div class="price">$390</div>
+<button onclick="addCart('Nordluxe Hoodie', this, '$390')">Add to Cart</button>
+</div>
+</div>
+
+</div>
+
+<!-- ABOUT -->
+
+<section class="about" id="about" data-aos="fade-up">
+
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e" data-aos="fade-right" data-aos-delay="200">
+
+<div class="about-text" data-aos="fade-left" data-aos-delay="400">
+
+<h2>About NORDLUXE</h2>
+
+<p>
+NORDLUXE is a luxury Scandinavian-inspired fashion house built on minimalism,
+timeless design, and premium craftsmanship. Our mission is to create elegant
+pieces that blend simplicity with bold identity.
+</p>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact" data-aos="fade-up">
+
+<h2 class="section-title">Contact</h2>
+
+<p data-aos="fade-up" data-aos-delay="200">Email: nord.luxe@gmail.com</p>
+<p data-aos="fade-up" data-aos-delay="300">Instagram: @nordluxe</p>
+
+</section>
+
+<!-- STORY -->
+
+<section class="story" id="story" data-aos="fade-up">
+
+<h2 class="section-title">Our Story</h2>
+
+<p data-aos="fade-up" data-aos-delay="200">
+Founded in the heart of Scandinavia, NORDLUXE emerged from a vision to redefine luxury fashion.
+What started as a small atelier in Stockholm has grown into a global brand, but our core values remain unchanged.
+</p>
+
+<p data-aos="fade-up" data-aos-delay="400">
+We believe in the power of simplicity, the beauty of natural materials, and the importance of sustainable practices.
+Every piece in our collection tells a story of craftsmanship, innovation, and timeless elegance.
+</p>
+
+</section>
+
+<footer>
+
+<p>© 2026 NORDLUXE</p>
+<p><a href="#">Instagram</a></p>
+
+</footer>
+
+<script>
+
+AOS.init({
+  duration: 800,
+  easing: 'ease-in-out',
+  once: true,
+  mirror: false
+});
+
+function addCart(product, button, price){
+alert(product + " added to cart");
+
+// Add animation to the clicked button
+if(button){
+button.classList.add('cart-animation');
+setTimeout(() => {
+button.classList.remove('cart-animation');
+}, 600);
+}
+
+// Create flying cart animation
+if(button){
+const buttonRect = button.getBoundingClientRect();
+const cartIcon = document.querySelector('.cart-btn');
+const cartRect = cartIcon.getBoundingClientRect();
+
+// Create flying element
+const flyingCart = document.createElement('div');
+flyingCart.className = 'flying-cart';
+flyingCart.style.left = buttonRect.left + buttonRect.width / 2 - 15 + 'px';
+flyingCart.style.top = buttonRect.top + buttonRect.height / 2 - 15 + 'px';
+document.body.appendChild(flyingCart);
+
+// Animate cart icon
+if(cartIcon){
+cartIcon.classList.add('cart-icon-bounce');
+setTimeout(() => {
+cartIcon.classList.remove('cart-icon-bounce');
+}, 800);
+}
+
+// Remove flying element after animation
+setTimeout(() => {
+if(flyingCart.parentNode){
+flyingCart.parentNode.removeChild(flyingCart);
+}
+}, 1200);
+}
+
+// Add to cart storage
+let cart = JSON.parse(localStorage.getItem('nordluxeCart') || '[]');
+cart.push({name: product, price: price, date: new Date().toISOString()});
+localStorage.setItem('nordluxeCart', JSON.stringify(cart));
+}
+
+function scrollToCollection(){
+document.getElementById("collection").scrollIntoView({behavior:"smooth"});
+}
+
+
+</script>
+
+</body>
+</html>
+```
